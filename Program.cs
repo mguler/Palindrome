@@ -1,5 +1,6 @@
     Console.WriteLine(Palindrome("shelloannakkalkpatatessetatapasdashjksannasmith2sananananaananananas2sadsadsadaskdjksaljdklasdkasl"));
-    
+    Console.Writeline(IsPalindrome("aabtbaa"));
+
     //returns longest palindrome substring
     static string Palindrome(string input) 
     {
@@ -22,4 +23,18 @@
                 t = 0;
         }
         return result.Length > 2 ? result: "none";
+    }
+
+
+    bool IsPalindrome(string input)
+    {
+        var len = input.Length / 2;
+         for (var index = 0; index < len; index++)
+        {
+            if (input[index] != input[input.Length - (index+1)])
+            {
+                return false;
+            }
+        }
+        return true;
     }
